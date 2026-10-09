@@ -2,6 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+<script>
+  /* Caducidad: la propuesta se ve 10 días desde su envío (marzo de 2026, publicada el 10-mar; el día de envío cuenta), hasta el 19-mar-2026
+     a las 23:59 de Madrid. Desde entonces, caducada.html. En local no caduca; ?caducada lo simula. */
+  (function () {
+    var fin = Date.UTC(2026, 2, 19, 23, 0);   // 20-mar-2026 00:00 en Madrid
+    if (/[?&]caducada\b/.test(location.search) || (/github\.io$/.test(location.hostname) && Date.now() >= fin)) {
+      document.documentElement.style.display = 'none';
+      location.replace('caducada.html');
+    }
+  })();
+</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Santos Rodríguez Cuenca — Fisioterapia Santos</title>
   <meta name="description" content="Santos Rodríguez Cuenca: Fisioterapeuta y Osteópata, director de Fisioterapia Santos. +20 años de experiencia. Colegiado 2437 CPFCM.">
